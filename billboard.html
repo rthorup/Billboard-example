@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Billboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js@1.2.0/dist/billboard.min.css">
+  </head>
+  <body>
+    <h1>Google searches for programming languages in relative numbers 2012-2017</h1>
+    <div id="chart"></div>
+  </body>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/billboard.js@1.2.0/dist/billboard.min.js"></script>
+  <script>
+    console.log('working');
+    var chart = bb.generate({
+  "size": {
+      "height": 400,
+      "width": 900,
+    },
+  "data": {
+    "x": "x",
+    "columns": [
+	["x", "2012-12-30", "2013-12-30", "2014-12-30", "2015-12-30", "2016-12-30", "2017-12-30"],
+	["Java", 38, 35, 42, 30, 20, 33],
+	["C++", 7, 7, 6, 6, 5, 9],
+  ["JavaScript", 18, 19, 19, 19, 18, 28],
+  ["PhP", 14, 13, 11, 10, 8, 8]
+    ]
+  },
+  "axis": {
+    "x": {
+      "type": "timeseries",
+      "tick": {
+        "format": "%Y"
+      }
+    }
+  },
+  "legend": {
+   "position": "right"
+ },
+ "point": {
+    "pattern": [
+      "circle",
+      "rectangle",
+      "<polygon points='2.5 0 0 2.5 2.5 5 5 2.5 2.5 0'></polygon>",
+      "<polygon points='2.5 0 0 5 5 5'></polygon>"
+    ]
+  },
+  "color": {
+    "pattern": [
+      "#00AFF0",
+      "#3E4095",
+      "#EC3237",
+      "#FE5C13"
+    ]
+  },
+  "bindto": "#chart"
+});
+  </script>
+  <style>
+    body {
+      text-align: center;
+      background-color: #d0d7e2;
+    }
+    #chart {
+      margin: auto;
+    }
+  </style>
+</html>
